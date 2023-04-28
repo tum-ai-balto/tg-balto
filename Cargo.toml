@@ -8,3 +8,7 @@ teloxide = { version = "0.12", features = ["macros"] }
 log = "0.4"
 pretty_env_logger = "0.4"
 tokio = { version =  "1.8", features = ["rt-multi-thread", "macros"] }
+fluent = "0.16.0"
+fluent-bundle = "0.15.2"
+serde = "1.0.160"
+thiserror = "1.0.40"

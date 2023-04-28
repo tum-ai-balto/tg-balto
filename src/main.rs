@@ -7,8 +7,7 @@ async fn main() {
 
     let bot = Bot::from_env();
 
-    teloxide::repl(bot, |bot: Bot, msg: Message| async move {
-        bot.send_dice(msg.chat.id).await?;
+    teloxide::repl(bot, |_bot: Bot, _msg: Message| async move {
         Ok(())
     })
     .await;
