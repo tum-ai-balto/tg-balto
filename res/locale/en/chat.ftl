@@ -1,0 +1,1 @@
+report-received = The employee "<b>{$employerName}</b>" ({$employerLang}) sent a new report:<br>{$content}
