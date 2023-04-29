@@ -24,13 +24,20 @@ Employer Dialogue:
 
 Employee Dialogue:
 1.  The employee has just one command 'Start Send Report'. 
+
 2.  When an employee send many audio/text/image, those will be sent to the backend to generate
     a bullet point list containing a summarize of the media contents.
-3.  If the user finished uploading the content, they can press the button 'End Send Report'.
+
+3.  If the user finished uploading the content, they can press one of the following buttons:
+        a.  The 'Finish' button: the content will be send to the model's backend to generate a summary
+            to be sent to the employee for a confirmation. Go to the point (4).
+        b.  The 'Abort' button: the sending operation will be abort. Go to point (1).
+
 4.  The backend will send a bullet point list containing all the information summarized:
         a.  If the summarized bullet points satisfy the employee, then it can proceed
-            with the report's sending. 
-        b.  Otherwise, restart the procedure going back to point 1.
+            with the report's sending pressing the 'Send' button.
+        b.  Otherwise, the user can abort using the 'Abort' button. Go to point (1).
+        
 5.  The employee will get a notification if they sent the report. The loop can restart again.
 ```
 
