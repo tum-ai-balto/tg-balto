@@ -13,16 +13,23 @@ The general algorithm used by the bot is pretty straightforward:
 ```
 
 Starting Dialogue:
+
 1.  Prompt to the user the following question: "Which is your role?"
+
 2.  If the user clicks 'Employer', go to the 'Employer Dialogue', otherwise, if they
     clicks 'Employee', go to 'Employee Dialogue'
 
+
 Employer Dialogue:
+
 1.  The employer can choose to get the list of the employees to get previous reports. Or,
     they can wait for a report from some employee.
+
 2.  When a report is received in PDF, the Employer can rate the overall produced work.
 
+
 Employee Dialogue:
+
 1.  The employee has just one command 'Start Send Report'. 
 
 2.  When an employee send many audio/text/image, those will be sent to the backend to generate
