@@ -23,9 +23,11 @@ Employer Dialogue:
 2.  When a report is received in PDF, the Employer can rate the overall produced work.
 
 Employee Dialogue:
-1.  The employee doesn't have any command available.
-2.  When an employee send an audio/text/image, this will be sent to the backend to generate
-    a bullet point containing a summarize of the media content.
+1.  The employee has just one command 'Start Send Report'. 
+2.  When an employee send many audio/text/image, those will be sent to the backend to generate
+    a bullet point list containing a summarize of the media contents.
+3.  If the user finished uploading the content, they can press the button 'End Send Report'.
+4.  The backend will send a bullet point list containing all the information summarized:
         a.  If the summarized bullet points satisfy the employee, then it can proceed
             with the report's sending. 
         b.  Otherwise, restart the procedure going back to point 1.
