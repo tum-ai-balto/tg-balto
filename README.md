@@ -31,7 +31,7 @@ Employee Dialogue:
         a.  If the summarized bullet points satisfy the employee, then it can proceed
             with the report's sending. 
         b.  Otherwise, restart the procedure going back to point 1.
-3.  The employee will get a notification if they sent the report. The loop can restart again.
+5.  The employee will get a notification if they sent the report. The loop can restart again.
 ```
 
 The user's locale is extracted by Telegram's settings. So, it's not necessary to input the 
