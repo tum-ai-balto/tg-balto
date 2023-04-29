@@ -1,9 +1,8 @@
-use teloxide::{
-    utils::command::BotCommands,
-};
+use teloxide::utils::command::BotCommands;
 
 pub mod help;
 pub mod start;
+pub mod callback;
 
 #[derive(BotCommands, Clone)]
 #[command(

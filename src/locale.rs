@@ -3,7 +3,7 @@ use fluent_bundle::FluentArgs;
 use itertools::Itertools;
 use serde::{Deserialize, Serialize};
 use std::{collections::HashMap, path::Path, sync::Arc};
-use teloxide::prelude::Message;
+use teloxide::prelude::{CallbackQuery, Message};
 use thiserror::Error;
 use tokio::fs::ReadDir;
 
@@ -14,7 +14,7 @@ use unic_langid::LanguageIdentifier;
 pub enum Locale {
     En, // English
     It, // Italian
-    De  // German
+    De, // German
 }
 
 impl TryFrom<&str> for Locale {
@@ -35,7 +35,7 @@ impl Into<LanguageIdentifier> for Locale {
         match self {
             Locale::En => "en".parse().unwrap(),
             Locale::It => "it".parse().unwrap(),
-            Locale::De => "de".parse().unwrap()
+            Locale::De => "de".parse().unwrap(),
         }
     }
 }
@@ -157,7 +157,27 @@ impl LocaleManager {
     }
 
     pub(crate) fn set_chat_locale_from_message(&mut self, message: &Message) {
-        self.local_locale = Self::get_language(message);
+        let mut locale = Locale::default();
+        if let Some(user) = message.from() {
+            if let Some(lang) = &user.language_code {
+                if let Ok(chat_locale) = Locale::try_from(lang.as_str()) {
+                    locale = chat_locale;
+                }
+            }
+        }
+
+        self.local_locale = locale;
+    }
+
+    pub(crate) fn set_chat_locale_from_query(&mut self, query: &CallbackQuery) {
+        let mut locale = Locale::default();
+        if let Some(lang) = &query.from.language_code {
+            if let Ok(chat_locale) = Locale::try_from(lang.as_str()) {
+                locale = chat_locale;
+            }
+        }
+
+        self.local_locale = locale;
     }
 
     pub(crate) fn get_message(
@@ -239,18 +259,5 @@ impl LocaleManager {
 
     fn get_bundle(&self, locale: Locale, res: &str) -> Option<&FluentBundleSafe> {
         self.bundles.get(&(locale, res.to_string()))
-    }
-
-    fn get_language(message: &Message) -> Locale {
-        let mut locale = Locale::default();
-        if let Some(user) = message.from() {
-            if let Some(lang) = &user.language_code {
-                if let Ok(chat_locale) = Locale::try_from(lang.as_str()) {
-                    locale = chat_locale;
-                }
-            }
-        }
-
-        locale
     }
 }

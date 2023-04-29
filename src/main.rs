@@ -1,21 +1,27 @@
-use teloxide::{adaptors::throttle::Limits, prelude::*};
+use teloxide::{
+    adaptors::throttle::Limits,
+    dispatching::dialogue::{serializer::Json, SqliteStorage},
+    prelude::*,
+};
 use tracing::warn;
 
-mod telegram;
 mod locale;
+mod telegram;
 
-use crate::locale::LocaleManager;
+use locale::LocaleManager;
+use telegram::MyStorage;
 
 #[tokio::main]
 async fn main() {
     tracing_subscriber::fmt::init();
-    
-    let locale = LocaleManager::new(
-        "./res/locale",
-        "en",
-    )
-    .await
-    .expect("unable to create the locale manager");
+
+    let storage: std::sync::Arc<MyStorage> = SqliteStorage::open("db.sqlite", Json)
+        .await
+        .expect("Unable to open the dialogue storage.");
+
+    let locale = LocaleManager::new("./res/locale", "en")
+        .await
+        .expect("Unable to create the locale manager.");
 
     let bot = Bot::from_env()
         .cache_me()
@@ -25,11 +31,10 @@ async fn main() {
     let handler = telegram::schema();
 
     Dispatcher::builder(bot, handler)
-        .dependencies(dptree::deps![locale])
+        .dependencies(dptree::deps![locale, storage])
         .default_handler(|upd| async move {
-            warn!("unhandled update: {:?}", upd);
+            warn!("Unhandled update: {:?}", upd);
         })
-        .enable_ctrlc_handler()
         .build()
         .dispatch()
         .await;
