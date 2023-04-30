@@ -109,6 +109,7 @@ async fn main() {
                 .unwrap();
             let pdf = InputFile::memory(pdf_bytes);
             let pdf = pdf.file_name(format!("{}.pdf", message.title));
+            println!("{}", message.employee);
             let employee_id = ChatId(message.employee.parse::<i64>().unwrap());
 
             let uuid = Uuid::new_v4();

@@ -6,7 +6,7 @@ received-employer = <b>Grazie per aver impostato l'employer!</b> { send-media }
 
 send-media = Come impiegato, puoi inviare un report inviandomi messaggi <b>testuali</b>, <b>audio</b> o <b>immagini</b>.
 
-    <b><i>Quando hai inviato tutto quanto, usa il comando <code>{ send-report-cmd }</code><i>.</i></b>
+    <b><i>Quando hai inviato tutto quanto, usa il comando <code>{ send-report-cmd }</code>.</i></b>
     <i>Per vedere la lista dei datori di lavoro disponibili, usa il comando <code>{ get-employers-cmd }</code>.</i>
 send-report-cmd = /send
 get-employers-cmd = /employers
@@ -18,5 +18,6 @@ sent-media = Stiamo mandando i tuoi contenuti all'AI. Il riassunto arriverà a b
 summary-generated = Ecco a te il riassunto: <i>{$reportSummary}</i>
 
     Se va il riassunto va bene, premi il pulsante <b>{ send }</b>.
+send = Invia 📬
 
 sent-report = Messaggio inviato! Ora puoi usare /reset per riavviare il processo, oppure fare un nuovo rapporto e /send

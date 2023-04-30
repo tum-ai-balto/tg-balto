@@ -18,6 +18,6 @@ sent-media = We are sending your content to the AI. The summary will be coming s
 summary-generated = This is what you sent: <i>{$reportSummary}</i>
 
     If you're ok with it, press <b>{ send }</b> button.
-
+send = Send 📬
 
 sent-report = Message sent! Now you can use /reset to restart the process, or make a new report and /send

@@ -134,7 +134,7 @@ pub(crate) async fn send_media(
         let employee_language: LanguageIdentifier = locale.local_locale.into();
         let req = GenerateReportRequest {
             employee: message.chat.id.to_string(),
-            employer,
+            employer: employer_user.id.to_string(),
             employee_language: employee_language.to_string(),
             employer_language: employer_user.lang,
             chat_messages: messages.collect_vec(),
