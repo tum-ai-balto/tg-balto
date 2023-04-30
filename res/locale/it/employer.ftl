@@ -1,5 +1,5 @@
-new-employer-lang = Come datore di lavoro, devi prima selezionare un linguaggio nel quale vuoi ricevere i report.
-new-employer = Come datore di lavoro, puoi ricevere i report dei tuoi impiegati come file PDF.
+new-employer = <b>Come datore di lavoro, puoi ricevere i report dei tuoi impiegati come file PDF.</b>
+
     Tutto quello che devi fare è aspettare l'invio di un report da parte di un impiegato. Quando il report sarà pronto riceverai una notifica 🔔
 
 

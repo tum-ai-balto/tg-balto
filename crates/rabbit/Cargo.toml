@@ -1,0 +1,9 @@
+[package]
+name = "rabbit"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+lapin = "2.1.1"
+tokio = { version =  "1", features = ["sync", "rt-multi-thread"] }
+thiserror = "1"

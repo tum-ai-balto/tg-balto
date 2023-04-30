@@ -15,3 +15,4 @@ Cargo.lock
 
 # VS Code Editor internal settings
 .vscode
+/dialogue.sqlite

@@ -1,17 +1,23 @@
-select-employer = Write the name of the employer you want to apply for
-received-employer = Thank you! { send-media }
+select-employer = <b>Write the name of the employer you want to apply for</b>
 
+    <i>To see the list of available employers, use the command <code>{ get-employers-cmd }</code>.</i>
 
-send-media = As employee, you can send me media content (text, audio, images) to generate a report to send.
-    When you are done sending the material, press press the command <code>{ generate-report-cmd }</code>.
+received-employer = <b>Thank you for setting up the employer!</b>{ send-media }
+
+send-media = As employee, you can send me media content (<b>text</b>, <b>audio</b>, <b>photo</b>) to generate a report to send.
+
+    <b><i>When you are done sending the material, use the command</i> <code>{ send-report-cmd }</code>.</i></b>
+    <i>To see the list of available employers, use the command <code>{ get-employers-cmd }</code>.</i>
+send-report-cmd = /send
+get-employers-cmd = /employers
+
 unrecognized-message = This message is not valid. Please send a text, an audio or an image.
 
-generate-report-cmd = \generate
+sent-media = We are sending your content to the AI. The summary will be coming soon.
 
-sending-report = Wait until the report is generated... 🔄
+summary-generated = This is what you sent: <i>{$reportSummary}</i>
 
-content-summary = You're sending {$mediaCount} media to your Employer. Please wait for a summary...
+    If you're ok with it, press <b>{ send }</b> button.
 
 
-summary-generated = This is what you sent: {$reportSummary}<br>If you're ok with it, press '{ send }' button. Otherwise, you cancel the operation pressing the '{ abort }' button.
-
+sent-report = Message sent! Now you can use /reset to restart the process, or make a new report and /send

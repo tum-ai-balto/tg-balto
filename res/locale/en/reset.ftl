@@ -1,0 +1,1 @@
+reset = 🗑️ <b>Your data has been deleted!</b>
