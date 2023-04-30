@@ -6,7 +6,7 @@ received-employer = <b>Grazie per aver impostato l'employer!</b> { send-media }
 
 send-media = Come impiegato, puoi inviare un report inviandomi messaggi <b>testuali</b>, <b>audio</b> o <b>immagini</b>.
 
-    <b><i>Quando hai inviato tutto quanto, usa il comando</i> <code>{ send-report-cmd }</code><i>.</i></b>
+    <b><i>Quando hai inviato tutto quanto, usa il comando <code>{ send-report-cmd }</code><i>.</i></b>
     <i>Per vedere la lista dei datori di lavoro disponibili, usa il comando <code>{ get-employers-cmd }</code>.</i>
 send-report-cmd = /send
 get-employers-cmd = /employers

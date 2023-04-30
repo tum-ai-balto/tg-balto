@@ -6,7 +6,7 @@ received-employer = <b>Thank you for setting up the employer!</b>{ send-media }
 
 send-media = As employee, you can send me media content (<b>text</b>, <b>audio</b>, <b>photo</b>) to generate a report to send.
 
-    <b><i>When you are done sending the material, use the command</i> <code>{ send-report-cmd }</code>.</i></b>
+    <b><i>When you are done sending the material, use the command <code>{ send-report-cmd }</code>.</i></b>
     <i>To see the list of available employers, use the command <code>{ get-employers-cmd }</code>.</i>
 send-report-cmd = /send
 get-employers-cmd = /employers
